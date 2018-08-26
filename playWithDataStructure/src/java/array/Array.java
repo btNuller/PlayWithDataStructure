@@ -110,7 +110,7 @@ public class Array<E> {
         size--;
         data[size] = null; // loitering objects != memory leak
 
-        if(size == data.length / 2)
+        if(size == getCatacity() / 4 && getCatacity() / 2 != 0)
             resize(data.length / 2);
         return deleteElement;
     }
