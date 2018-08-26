@@ -70,6 +70,14 @@ public class Array<E> {
         return data[index];
     }
 
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
     public void set(int index, E e) {
         checkIllegal(index, index >= size, "set failed, index error");
         data[index] = e;
