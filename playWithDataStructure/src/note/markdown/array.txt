@@ -1,0 +1,103 @@
+Array 自定义的类 {
+
+field 中需要初始化 data 和 size 大小
+
+新建array的时候是需要用构造函数的，在其中传入数组的容量capacity构造array
+
+无参数的构造函数，然后给一个默认的数据的容量DEFFAULT_CAPACITY
+
+method ：
+
+getSize
+获取数组中的元素个数 （实际上array中有的元素个数）
+
+getCatacity
+获取数组的容量 （获取该数组的容量大小，而容量，是我们一开始的时候就固定了的）
+
+isEmpty
+判断是不是空
+
+addFirst
+向所有的元素后添加一个元素
+tips： 先要判断数组中的元素数量 == 数组总的空间大小，此时我们的数组不能添加一个新的元素了。那么我们的数组是不能添加数据的了。
+
+add
+向数组中的指定位置添加元素
+
+int element, int index
+    如上，判断array是否full，然后判断传入的index是否合法。
+
+    先要把size - 1 的元素移动到 size 的位置，然后把 size - 2的元素移动到 size - 1 的位置了。。。知道我们的index上的元素。
+    完成之后我们需要size++.
+
+
+addLast
+在数组的末尾位置添加元素
+
+@Override
+toString
+用于测试我们的测试，覆盖Object打印输出我们的数据。
+    StringBuilder res = new StringBuilder();
+    res.append(String.format("Array: size = %d, capacity = %d\n"), size, data);
+    res.append('[');
+    for(int i = 0; i < size; i ++) {
+       res.append(data[i]);
+       if(i != size - 1)
+           res.append(", ");
+    }
+    res.append(']');
+    return res.toString();
+
+
+get
+获取index索引位置的元素
+判断索引的合法性
+返回data[index]在索引上的数据。
+
+set
+进行我们数组元素的更新，把我们数组中的某一个元素中的数据设置为e
+
+数组中的包含，删除和搜索
+
+bool contains (int e)
+   for(int i = 0; i < size; i++)
+       if data[i] == e
+           return true;
+   return false;
+}
+
+
+int find(int e)
+查找数组中的元素e所在的索引，如果不存在元素e，则返回-1
+
+delete
+    先要判断你数据的合法性，删除该索引的数据，将之后的数据分别向前移动
+    for i = index + 1; i < size; i++
+        data[i - 1] = data[i];
+    size--;
+    return ret;
+
+
+deleteFirst
+  return delete(0);
+
+deleteLast
+  return delete(size - 1);
+
+bool deleteElement
+  根据元素数值删除
+  int index = find(e);
+  if(index != -1) remove(index);
+  (删除成功之后bool，另外，数组可以存在重复的数据，那么数组中的所有的元素的数据)
+
+bool deleteAllElement
+
+  同理 find --》 findAll
+
+
+使用泛型完成数组中的数据类型的适配
+  在构造函数中，使用
+
+
+}
+

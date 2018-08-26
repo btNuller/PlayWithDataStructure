@@ -1,0 +1,19 @@
+栈的实现
+
+Stack<E>
+
+void push(E)
+
+E pop
+
+E peek 查看栈顶
+
+int getSize()
+
+boolean isEmpty
+
+从用户的角度看，支持这些操作就好
+
+具体底层的实现，用户不关心
+
+实际底层有多种实现方式
