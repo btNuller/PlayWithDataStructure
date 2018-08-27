@@ -10,3 +10,45 @@ class Node() {
     E e;
     Node next;
 }
+
+在链表头添加元素
+
+链表之间添加
+
+关键是找到添加节点的前一个节点
+
+node.next = prev.next;
+
+prev.next = node;
+
+为链表设立虚拟头结点
+
+dummyHead 虚拟头结点
+
+链表的时间复杂度
+
+添加操作
+addLast(e) O(n)
+
+addFirst(e) O(1)
+
+add(index, e) 均摊复杂度 O(n / 2) = O(n)
+
+删除操作
+
+deleteLast(e) O(n)
+
+deleteFirst(e) O(1)
+
+delete(index, e) O(n / 2) = O(n)
+
+set(index, e) O(n)
+
+查找操作
+
+get(index) O(n)
+
+contains(e) O(n)
+
+只查找链表的元素
+只对链表头进行操作的时候，时间复杂度相比数组是有很大的优势的。
